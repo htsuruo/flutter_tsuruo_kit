@@ -32,7 +32,7 @@ class SliverListViewSeparated extends StatelessWidget {
       childCount: childCount,
     );
     return SliverList(
-      key: pageStorageKey ?? PageStorageKey(''),
+      key: pageStorageKey ?? const PageStorageKey(''),
       delegate: childDelegate,
     );
   }

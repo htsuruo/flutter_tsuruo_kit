@@ -29,7 +29,7 @@ class BarrierDialog extends StatelessWidget {
                 // 暗い印象を与えたかったので`.black.withOpacity(.4)`を重ねるのを必須にした
                 if (backgroundColor != null)
                   Container(
-                    color: backgroundColor!,
+                    color: backgroundColor,
                     width: size,
                     height: size,
                   ),
@@ -48,7 +48,7 @@ class BarrierDialog extends StatelessWidget {
                 ),
               ],
             )
-          : SizedBox.shrink(),
+          : const SizedBox.shrink(),
     );
   }
 }
