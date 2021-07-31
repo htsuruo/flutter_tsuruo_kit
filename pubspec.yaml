@@ -8,8 +8,12 @@ environment:
   flutter: ">=2.0.0"
 
 dependencies:
+  cloud_firestore:
+  collection:
   flutter:
     sdk: flutter
+  flutter_riverpod: ^1.0.0-dev.6
+  rxdart:
 
 dev_dependencies:
   flutter_test:
