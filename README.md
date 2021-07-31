@@ -1,4 +1,4 @@
-# flutter_tsuruo_kit
+# tsuruo_kit
 
 A new Flutter package project.
 
