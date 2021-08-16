@@ -10,6 +10,7 @@ class Barrier extends StatelessWidget {
     this.backgroundColor,
     this.useBoxIndicator = false,
     this.boxBackgroundColor,
+    this.boxWidget,
     this.label,
   }) : super(key: key);
 
@@ -21,6 +22,7 @@ class Barrier extends StatelessWidget {
   final bool useBoxIndicator;
   final Color? boxBackgroundColor;
   final String? label;
+  final Widget? boxWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -38,14 +40,15 @@ class Barrier extends StatelessWidget {
                       color: backgroundColor ?? Colors.black45,
                       dismissible: false,
                     ),
-                    Center(
-                      child: useBoxIndicator || label != null
-                          ? _BoxIndicator(
-                              label: label,
-                              backgroundColor: boxBackgroundColor,
-                            )
-                          : const CircularProgressIndicator(),
-                    ),
+                    boxWidget ??
+                        Center(
+                          child: useBoxIndicator || label != null
+                              ? _BoxIndicator(
+                                  label: label,
+                                  backgroundColor: boxBackgroundColor,
+                                )
+                              : const CircularProgressIndicator(),
+                        ),
                   ],
                 )
               : const SizedBox.shrink(),

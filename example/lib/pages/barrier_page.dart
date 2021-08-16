@@ -9,34 +9,52 @@ class BarrierPage extends StatefulWidget {
 }
 
 class _BarrierPageState extends State<BarrierPage> {
-  bool show = false;
+  bool barrierShow = false;
+  bool barrierDialogShow = false;
 
   @override
   Widget build(BuildContext context) {
-    return Barrier(
-      show: show,
-      useBoxIndicator: true,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(runtimeType.toString()),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              OutlinedButton(
-                onPressed: () async {
-                  setState(() {
-                    show = true;
-                  });
-                  await Future.delayed(const Duration(seconds: 3));
-                  setState(() {
-                    show = false;
-                  });
-                },
-                child: Text('show'),
-              ),
-            ],
+    return BarrierDialog(
+      title: Text('Test'),
+      content: Text('content'),
+      show: barrierDialogShow,
+      child: Barrier(
+        show: barrierShow,
+        useBoxIndicator: true,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text(runtimeType.toString()),
+          ),
+          body: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                OutlinedButton(
+                  onPressed: () async {
+                    setState(() {
+                      barrierShow = true;
+                    });
+                    await Future.delayed(const Duration(seconds: 3));
+                    setState(() {
+                      barrierShow = false;
+                    });
+                  },
+                  child: Text('show barrier'),
+                ),
+                OutlinedButton(
+                  onPressed: () async {
+                    setState(() {
+                      barrierDialogShow = true;
+                    });
+                    await Future.delayed(const Duration(seconds: 3));
+                    setState(() {
+                      barrierDialogShow = false;
+                    });
+                  },
+                  child: Text('show barrier_dialog'),
+                ),
+              ],
+            ),
           ),
         ),
       ),
