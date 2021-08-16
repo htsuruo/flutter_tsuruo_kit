@@ -1,3 +1,7 @@
+## 0.0.5
+
+- Add `Barrier` and `ProgressHUB` for in something async execution
+
 ## 0.0.4
 
 - Add `PlaygroundBuilder`
