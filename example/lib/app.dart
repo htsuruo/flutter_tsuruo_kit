@@ -5,6 +5,7 @@ import 'package:tsuruo_kit/tsuruo_kit.dart';
 Map<String, WidgetBuilder> _routes = {
   // routeName: (context) => Page Class
   PlaygroundPage.routeName: (context) => PlaygroundPage(),
+  BarrierPage.routeName: (context) => BarrierPage(),
 };
 
 class App extends StatelessWidget {
