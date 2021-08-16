@@ -1,7 +1,13 @@
-import 'package:example/run.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'app.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  return run();
+  return runApp(
+    const ProviderScope(
+      child: App(),
+    ),
+  );
 }

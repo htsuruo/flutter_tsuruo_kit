@@ -1,8 +1,10 @@
 export 'app_bar/gradient_app_bar.dart';
 export 'app_bar/transparent_app_bar.dart';
 export 'automatic_keep_alive_client.dart';
-export 'barrier.dart';
-export 'barrier_dialog.dart';
+export 'barrier/barrier.dart';
+export 'barrier/barrier_dialog.dart';
+export 'barrier/progress_controller.dart';
+export 'barrier/progress_hud.dart';
 export 'page_switcher.dart';
 export 'playground_builder.dart';
 export 'sliver_list_view_separated.dart';

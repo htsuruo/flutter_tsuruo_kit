@@ -3,8 +3,8 @@ import 'package:tsuruo_kit/tsuruo_kit.dart';
 
 Map<String, WidgetBuilder> _routes = {
   // routeName: (context) => Page Class
-  _HogePage.routeName: (context) => _HogePage(),
-  _PiyoPage.routeName: (context) => _PiyoPage(),
+  _HogePage.routeName: (context) => const _HogePage(),
+  _PiyoPage.routeName: (context) => const _PiyoPage(),
 };
 
 class PlaygroundPage extends StatelessWidget {
@@ -19,7 +19,7 @@ class PlaygroundPage extends StatelessWidget {
         routes: _routes,
       ),
       theme: ThemeData.from(
-        colorScheme: ColorScheme.light(),
+        colorScheme: const ColorScheme.light(),
       ),
       routes: _routes,
     );

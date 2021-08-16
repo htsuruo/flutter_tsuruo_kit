@@ -1,11 +1,13 @@
 import 'package:example/pages/pages.dart';
+import 'package:example/pages/progress_page.dart';
 import 'package:flutter/material.dart';
 import 'package:tsuruo_kit/tsuruo_kit.dart';
 
 Map<String, WidgetBuilder> _routes = {
   // routeName: (context) => Page Class
-  PlaygroundPage.routeName: (context) => PlaygroundPage(),
-  BarrierPage.routeName: (context) => BarrierPage(),
+  PlaygroundPage.routeName: (context) => const PlaygroundPage(),
+  BarrierPage.routeName: (context) => const BarrierPage(),
+  ProgressPage.routeName: (context) => const ProgressPage(),
 };
 
 class App extends StatelessWidget {
@@ -20,7 +22,7 @@ class App extends StatelessWidget {
         routes: _routes,
       ),
       theme: ThemeData.from(
-        colorScheme: ColorScheme.light(),
+        colorScheme: const ColorScheme.light(),
       ),
       routes: _routes,
     );

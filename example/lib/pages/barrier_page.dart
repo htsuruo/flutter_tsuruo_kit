@@ -15,8 +15,8 @@ class _BarrierPageState extends State<BarrierPage> {
   @override
   Widget build(BuildContext context) {
     return BarrierDialog(
-      title: Text('Test'),
-      content: LinearProgressIndicator(minHeight: 1),
+      title: const Text('Test'),
+      content: const LinearProgressIndicator(minHeight: 1),
       actions: [
         TextButton(
           onPressed: () {
@@ -24,7 +24,7 @@ class _BarrierPageState extends State<BarrierPage> {
               barrierDialogShow = false;
             });
           },
-          child: Text('Cancel'),
+          child: const Text('Cancel'),
         ),
       ],
       show: barrierDialogShow,
@@ -50,7 +50,7 @@ class _BarrierPageState extends State<BarrierPage> {
                       });
                     });
                   },
-                  child: Text('show barrier'),
+                  child: const Text('show barrier'),
                 ),
                 OutlinedButton(
                   onPressed: () async {
@@ -58,7 +58,7 @@ class _BarrierPageState extends State<BarrierPage> {
                       barrierDialogShow = true;
                     });
                   },
-                  child: Text('show barrier_dialog'),
+                  child: const Text('show barrier_dialog'),
                 ),
               ],
             ),

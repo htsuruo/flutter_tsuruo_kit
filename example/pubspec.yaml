@@ -23,12 +23,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_riverpod: ^1.0.0-dev.6
   tsuruo_kit:
     path: ..
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  pedantic_mono:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
