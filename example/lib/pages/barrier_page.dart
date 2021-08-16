@@ -16,7 +16,17 @@ class _BarrierPageState extends State<BarrierPage> {
   Widget build(BuildContext context) {
     return BarrierDialog(
       title: Text('Test'),
-      content: Text('content'),
+      content: LinearProgressIndicator(minHeight: 1),
+      actions: [
+        TextButton(
+          onPressed: () {
+            setState(() {
+              barrierDialogShow = false;
+            });
+          },
+          child: Text('Cancel'),
+        ),
+      ],
       show: barrierDialogShow,
       child: Barrier(
         show: barrierShow,
@@ -34,9 +44,10 @@ class _BarrierPageState extends State<BarrierPage> {
                     setState(() {
                       barrierShow = true;
                     });
-                    await Future.delayed(const Duration(seconds: 3));
-                    setState(() {
-                      barrierShow = false;
+                    await Future.delayed(const Duration(seconds: 3), () {
+                      setState(() {
+                        barrierShow = false;
+                      });
                     });
                   },
                   child: Text('show barrier'),
@@ -45,10 +56,6 @@ class _BarrierPageState extends State<BarrierPage> {
                   onPressed: () async {
                     setState(() {
                       barrierDialogShow = true;
-                    });
-                    await Future.delayed(const Duration(seconds: 3));
-                    setState(() {
-                      barrierDialogShow = false;
                     });
                   },
                   child: Text('show barrier_dialog'),
