@@ -1,3 +1,8 @@
+## 0.0.7
+
+- Remove unused state_notifier extension
+- Add typedef `JsonMap` as Map<String, dynamic>
+
 ## 0.0.6
 
 - Remove `PlaygroundBuilder`
