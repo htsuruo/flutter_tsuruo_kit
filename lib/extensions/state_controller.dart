@@ -1,4 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rxdart/rxdart.dart';
+
 // final selectedProductIdProvider = StateProvider<String?>((ref) => null);
 // 上記のような`null`を初期値に持つ使い方が一般的であるがその場合どうしてもnullableになってしまう
 // 本来参照時に`null`であることは想定されていないはずなのでエラーを返してあげるほうが親切
@@ -8,7 +10,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 // もちろんnon-nullableへのキャストなので実際にstateが`null`だった場合はリリースモードでもその処理が行われないので
 // そうならないように開発段階で十分に潰しておく必要がある
 // ref. https://github.com/39works/mytradeApp/pull/222#issuecomment-822199282
-
-extension StateControllerEx<T> on StateController<T?> {
+extension StateControllerNullableEx<T> on StateController<T?> {
   T get requireState => state!;
+}
+
+extension StateControllerEx<T> on StateController<T> {
+  Stream<T> get streamWithCurrent =>
+      // ignore: invalid_use_of_protected_member
+      Rx.concat([Stream.value(state), stream]);
 }
