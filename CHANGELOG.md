@@ -1,6 +1,12 @@
+## 0.0.6
+
+- Remove `PlaygroundBuilder`
+- Add `RoutesListView` instead for general use
+- Downgrade `rxdart` to ^0.26.0
+
 ## 0.0.5
 
-- Add `Barrier` and `ProgressHUB` for in something async execution
+- Add `Barrier` and `ProgressHUD` for in something async execution
 
 ## 0.0.4
 
