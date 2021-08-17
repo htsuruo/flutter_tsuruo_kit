@@ -8,9 +8,14 @@ class ProgressHUD extends ConsumerWidget {
   const ProgressHUD({
     Key? key,
     required this.child,
+    this.useBoxIndicator = true,
+    this.label,
   }) : super(key: key);
 
   final Widget child;
+  final bool useBoxIndicator;
+  final String? label;
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final show = ref.watch(
@@ -18,7 +23,8 @@ class ProgressHUD extends ConsumerWidget {
     );
     return Barrier(
       show: show,
-      useBoxIndicator: true,
+      label: label,
+      useBoxIndicator: useBoxIndicator,
       child: child,
     );
   }

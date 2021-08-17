@@ -13,7 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_riverpod: ^1.0.0-dev.6
-  rxdart: ^0.27.1
+  rxdart: ^0.26.0
 
 dev_dependencies:
   flutter_test:

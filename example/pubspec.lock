@@ -197,7 +197,7 @@ packages:
       name: rxdart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.27.1"
+    version: "0.26.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -258,7 +258,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.4"
+    version: "0.0.5"
   typed_data:
     dependency: transitive
     description:
