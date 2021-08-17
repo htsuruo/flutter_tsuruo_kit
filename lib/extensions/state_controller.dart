@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rxdart/rxdart.dart';
 
 // final selectedProductIdProvider = StateProvider<String?>((ref) => null);
 // 上記のような`null`を初期値に持つ使い方が一般的であるがその場合どうしてもnullableになってしまう
@@ -12,10 +11,4 @@ import 'package:rxdart/rxdart.dart';
 // ref. https://github.com/39works/mytradeApp/pull/222#issuecomment-822199282
 extension StateControllerNullableEx<T> on StateController<T?> {
   T get requireState => state!;
-}
-
-extension StateControllerEx<T> on StateController<T> {
-  Stream<T> get streamWithCurrent =>
-      // ignore: invalid_use_of_protected_member
-      Rx.concat([Stream.value(state), stream]);
 }
