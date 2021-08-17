@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tsuruo_kit/tsuruo_kit.dart';
 
 Map<String, WidgetBuilder> _routes = {
   // routeName: (context) => Page Class
@@ -7,21 +6,32 @@ Map<String, WidgetBuilder> _routes = {
   _PiyoPage.routeName: (context) => const _PiyoPage(),
 };
 
-class PlaygroundPage extends StatelessWidget {
-  const PlaygroundPage({Key? key}) : super(key: key);
-  static const routeName = '/playground';
+class RoutesListViewPage extends StatelessWidget {
+  const RoutesListViewPage({Key? key}) : super(key: key);
+  static const routeName = '/routes_listview';
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: PlaygroundBuilder(
-        title: runtimeType.toString(),
-        routes: _routes,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(routeName),
       ),
-      theme: ThemeData.from(
-        colorScheme: const ColorScheme.light(),
+      body: ListView.separated(
+        itemBuilder: (context, index) {
+          final route = _routes.entries.toList()[index];
+          return ListTile(
+            title: Text(route.key),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute<void>(builder: route.value),
+              );
+            },
+          );
+        },
+        separatorBuilder: (context, _) => const Divider(),
+        itemCount: _routes.length,
       ),
-      routes: _routes,
     );
   }
 }

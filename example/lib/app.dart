@@ -5,7 +5,7 @@ import 'package:tsuruo_kit/tsuruo_kit.dart';
 
 Map<String, WidgetBuilder> _routes = {
   // routeName: (context) => Page Class
-  PlaygroundPage.routeName: (context) => const PlaygroundPage(),
+  RoutesListViewPage.routeName: (context) => const RoutesListViewPage(),
   BarrierPage.routeName: (context) => const BarrierPage(),
   ProgressPage.routeName: (context) => const ProgressPage(),
 };
@@ -17,12 +17,16 @@ class App extends StatelessWidget {
     const title = 'tsuruo_kit example';
     return MaterialApp(
       title: title,
-      home: PlaygroundBuilder(
-        title: title,
-        routes: _routes,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(runtimeType.toString()),
+        ),
+        body: RoutesListView(routes: _routes),
       ),
       theme: ThemeData.from(
         colorScheme: const ColorScheme.light(),
+      ).copyWith(
+        dividerTheme: const DividerThemeData(space: 0),
       ),
       routes: _routes,
     );
