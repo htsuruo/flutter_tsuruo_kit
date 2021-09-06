@@ -1,3 +1,4 @@
+import 'package:example/logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tsuruo_kit/tsuruo_kit.dart';
@@ -40,14 +41,15 @@ class _ProgressController {
         return true;
       }),
     );
+    logger.fine('success: $success');
     // 結果を元に連続して呼び出すことも可能
-    if (success) {
-      await Future<void>.delayed(const Duration(seconds: 1));
-      await _read(progressController.notifier).executeWithProgress<bool>(
-        () => Future.delayed(const Duration(seconds: 3), () {
-          return true;
-        }),
-      );
-    }
+    // if (success) {
+    //   await Future<void>.delayed(const Duration(seconds: 1));
+    //   await _read(progressController.notifier).executeWithProgress<bool>(
+    //     () => Future.delayed(const Duration(seconds: 3), () {
+    //       return true;
+    //     }),
+    //   );
+    // }
   }
 }

@@ -6,7 +6,7 @@ class Barrier extends StatelessWidget {
     required this.child,
     required this.show,
     this.switchDuration = const Duration(milliseconds: 300),
-    this.timeout = const Duration(seconds: 30),
+    // this.timeout = const Duration(seconds: 30),
     this.backgroundColor,
     this.useBoxIndicator = false,
     this.boxBackgroundColor,
@@ -17,7 +17,8 @@ class Barrier extends StatelessWidget {
   final Widget child;
   final bool show;
   final Duration switchDuration;
-  final Duration timeout;
+  // TODO(tsuruoka): future work
+  // final Duration timeout;
   final Color? backgroundColor;
   final bool useBoxIndicator;
   final Color? boxBackgroundColor;

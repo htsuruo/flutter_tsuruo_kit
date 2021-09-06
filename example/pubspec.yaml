@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_riverpod: ^1.0.0-dev.6
+  simple_logger:
   tsuruo_kit:
     path: ..
 
