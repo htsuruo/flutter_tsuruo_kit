@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tsuruo_kit/tsuruo_kit.dart';
 
 class Barrier extends StatelessWidget {
   const Barrier({
@@ -12,6 +13,7 @@ class Barrier extends StatelessWidget {
     this.boxBackgroundColor,
     this.boxWidget,
     this.label,
+    this.thresholdDuration = const Duration(milliseconds: 200),
   }) : super(key: key);
 
   final Widget child;
@@ -24,18 +26,17 @@ class Barrier extends StatelessWidget {
   final Color? boxBackgroundColor;
   final String? label;
   final Widget? boxWidget;
+  final Duration thresholdDuration;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         child,
-        AnimatedSwitcher(
-          duration: switchDuration,
-          switchInCurve: Curves.easeIn,
-          switchOutCurve: Curves.easeOut,
-          child: show
-              ? Stack(
+        show
+            ? TimeoutSwitcher(
+                duration: thresholdDuration,
+                child: Stack(
                   children: [
                     ModalBarrier(
                       color: backgroundColor ?? Colors.black45,
@@ -51,9 +52,9 @@ class Barrier extends StatelessWidget {
                               : const CircularProgressIndicator(),
                         ),
                   ],
-                )
-              : const SizedBox.shrink(),
-        ),
+                ),
+              )
+            : const SizedBox.shrink(),
       ],
     );
   }
