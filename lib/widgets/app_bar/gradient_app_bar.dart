@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class GradientAppBar extends StatelessWidget implements PreferredSizeWidget {
   const GradientAppBar({
@@ -7,14 +8,14 @@ class GradientAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.title,
     this.centerTitle,
     required this.gradient,
-    this.brightness,
+    this.overlayStyle,
   }) : super(key: key);
 
   final List<Widget>? actions;
   final Widget? title;
   final bool? centerTitle;
   final Gradient gradient;
-  final Brightness? brightness;
+  final SystemUiOverlayStyle? overlayStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +28,11 @@ class GradientAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: AppBar(
         title: title,
         centerTitle: centerTitle,
-        textTheme: theme.textTheme,
         backgroundColor: Colors.transparent,
         iconTheme: IconThemeData(color: colorScheme.primary),
         actions: actions,
         elevation: 0,
-        brightness: brightness ?? Brightness.dark,
+        systemOverlayStyle: overlayStyle ?? SystemUiOverlayStyle.light,
       ),
     );
   }
