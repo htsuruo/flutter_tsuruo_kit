@@ -8,8 +8,8 @@ environment:
   flutter: ">=2.0.0"
 
 dependencies:
-  cloud_firestore: ^2.4.0
-  collection: ^1.15.0
+  cloud_firestore:
+  collection:
   flutter:
     sdk: flutter
   flutter_riverpod: ^1.0.0-dev.6
