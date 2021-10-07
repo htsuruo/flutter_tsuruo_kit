@@ -1,3 +1,8 @@
+## 0.0.8
+
+- Rename Enum extension to `name`, `byName()` coming for Dart 2.15
+    - ref. https://github.com/dart-lang/sdk/blob/23cf71efba3b1bab1afd8b0d515189c9d644584c/sdk/lib/core/enum.dart#L85
+
 ## 0.0.7
 
 - Remove unused state_notifier extension
