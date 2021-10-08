@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 
 // Dart 2.15で`name``byName`が言語レベルで入ってくるのでこれらExtensionは不要となる
@@ -11,5 +12,10 @@ extension EnumsX<T extends Enum> on List<T> {
   T byName(String value) => firstWhere(
         (e) => '$e'.split('.').last == value,
         orElse: () => throw AssertionError('Enum $T has not $value'),
+      );
+
+  // 該当のEnumが存在しない場合はnullを返す
+  T? byNameOrNull(String value) => firstWhereOrNull(
+        (e) => '$e'.split('.').last == value,
       );
 }
