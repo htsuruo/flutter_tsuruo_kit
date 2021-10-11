@@ -10,7 +10,8 @@ extension EnumX on Enum {
 extension EnumsX<T extends Enum> on List<T> {
   T byName(String name) => firstWhere(
         (e) => '$e'.split('.').last == name,
-        orElse: () => throw AssertionError('Enum $T has not $name'),
+        orElse: () => throw ArgumentError.value(
+            name, 'name', 'No enum value with that name'),
       );
 
   // 該当のEnumが存在しない場合はnullを返す
