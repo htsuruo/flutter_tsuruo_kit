@@ -18,7 +18,8 @@ extension EnumsX<T extends Enum> on List<T> {
   T? byNameOrNull(String? name) {
     try {
       return byName('$name');
-    } on Exception catch (_) {
+      // ignore: avoid_catches_without_on_clauses
+    } catch (_) {
       return null;
     }
   }
