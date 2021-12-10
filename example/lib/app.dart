@@ -1,5 +1,4 @@
 import 'package:example/pages/pages.dart';
-import 'package:example/pages/progress_page.dart';
 import 'package:flutter/material.dart';
 import 'package:tsuruo_kit/tsuruo_kit.dart';
 
