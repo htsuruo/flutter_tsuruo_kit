@@ -1,3 +1,9 @@
+## 0.0.9
+
+- Remove Enum extension because Dart 2.15 release
+- Remove StateController extension
+- Upgrade to Flutter 2.8
+
 ## 0.0.8
 
 - Rename Enum extension to `name`, `byName()` coming for Dart 2.15
