@@ -198,13 +198,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0-dev.6"
-  rxdart:
-    dependency: transitive
-    description:
-      name: rxdart
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.26.0"
   simple_logger:
     dependency: "direct main"
     description:
@@ -288,5 +281,5 @@ packages:
     source: hosted
     version: "2.1.1"
 sdks:
-  dart: ">=2.14.0 <3.0.0"
+  dart: ">=2.15.0 <3.0.0"
   flutter: ">=2.0.0"

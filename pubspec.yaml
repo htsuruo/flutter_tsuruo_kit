@@ -4,7 +4,7 @@ version: 0.0.9
 homepage: https://github.com/HTsuruo/flutter_tsuruo_kit
 
 environment:
-  sdk: ">=2.13.0 <3.0.0"
+  sdk: ">=2.15.0 <3.0.0"
   flutter: ">=2.0.0"
 
 dependencies:
@@ -13,7 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_riverpod:
-  rxdart: ^0.26.0
+  rxdart:
 
 dev_dependencies:
   flutter_test:
