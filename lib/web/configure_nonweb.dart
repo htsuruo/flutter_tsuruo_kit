@@ -1,1 +1,1 @@
-void configureApp() {}
+void configureWeb() {}
