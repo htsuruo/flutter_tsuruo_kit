@@ -12,7 +12,7 @@ dependencies:
   collection:
   flutter:
     sdk: flutter
-  flutter_riverpod:
+  flutter_riverpod: ^2.0.0-dev.4
   flutter_web_plugins:
     sdk: flutter
   rxdart:
