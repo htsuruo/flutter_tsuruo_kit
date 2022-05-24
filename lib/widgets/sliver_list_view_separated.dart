@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 // ListView.separatedのSliver版
 class SliverListViewSeparated extends StatelessWidget {
   const SliverListViewSeparated({
-    Key? key,
+    super.key,
     required this.itemBuilder,
     required this.separatorBuilder,
     required this.childCount,
     this.pageStorageKey,
-  }) : super(key: key);
+  });
 
   final PageStorageKey<String>? pageStorageKey;
   final IndexedWidgetBuilder itemBuilder;

@@ -3,13 +3,13 @@ import 'package:flutter/services.dart';
 
 class GradientAppBar extends StatelessWidget implements PreferredSizeWidget {
   const GradientAppBar({
-    Key? key,
+    super.key,
     this.actions,
     this.title,
     this.centerTitle,
     required this.gradient,
     this.overlayStyle,
-  }) : super(key: key);
+  });
 
   final List<Widget>? actions;
   final Widget? title;

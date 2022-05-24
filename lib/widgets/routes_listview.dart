@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// - [RoutesListView] is ListView Wrapper needs [routes]
 class RoutesListView extends StatelessWidget {
-  const RoutesListView({Key? key, required this.routes}) : super(key: key);
+  const RoutesListView({super.key, required this.routes});
   final Map<String, WidgetBuilder> routes;
 
   @override

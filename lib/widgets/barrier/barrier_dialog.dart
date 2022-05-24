@@ -3,14 +3,14 @@ import 'package:tsuruo_kit/tsuruo_kit.dart';
 
 class BarrierDialog extends StatelessWidget {
   const BarrierDialog({
-    Key? key,
+    super.key,
     required this.show,
     required this.title,
     required this.child,
     this.content,
     this.actions,
     this.backgroundColor,
-  }) : super(key: key);
+  });
 
   final bool show;
   final Widget title;

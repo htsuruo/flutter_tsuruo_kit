@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Barrier extends StatelessWidget {
   const Barrier({
-    Key? key,
+    super.key,
     required this.child,
     required this.show,
     this.switchDuration = const Duration(milliseconds: 300),
@@ -12,7 +12,7 @@ class Barrier extends StatelessWidget {
     this.boxBackgroundColor,
     this.boxWidget,
     this.label,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final bool show;
@@ -61,10 +61,10 @@ class Barrier extends StatelessWidget {
 
 class _BoxIndicator extends StatelessWidget {
   const _BoxIndicator({
-    Key? key,
+    super.key,
     this.label,
     this.backgroundColor,
-  }) : super(key: key);
+  });
 
   final String? label;
   final Color? backgroundColor;

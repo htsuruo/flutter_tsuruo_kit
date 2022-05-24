@@ -6,11 +6,11 @@ import 'package:tsuruo_kit/tsuruo_kit.dart';
 // `executeWithProgress`に連動してBarrierが呼ばれる
 class ProgressHUD extends ConsumerWidget {
   const ProgressHUD({
-    Key? key,
+    super.key,
     required this.child,
     this.useBoxIndicator = true,
     this.label,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final bool useBoxIndicator;
