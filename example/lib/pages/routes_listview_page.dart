@@ -37,7 +37,7 @@ class RoutesListViewPage extends StatelessWidget {
 }
 
 class _HogePage extends StatelessWidget {
-  const _HogePage({super.key});
+  const _HogePage();
 
   static const routeName = '/hoge';
 
@@ -52,7 +52,7 @@ class _HogePage extends StatelessWidget {
 }
 
 class _PiyoPage extends StatelessWidget {
-  const _PiyoPage({super.key});
+  const _PiyoPage();
 
   static const routeName = '/piyo';
 

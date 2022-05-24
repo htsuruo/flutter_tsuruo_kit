@@ -4,8 +4,9 @@ import 'package:tsuruo_kit/tsuruo_kit.dart';
 class BarrierPage extends StatefulWidget {
   const BarrierPage({super.key});
   static const routeName = '/barrier';
+
   @override
-  _BarrierPageState createState() => _BarrierPageState();
+  State<BarrierPage> createState() => _BarrierPageState();
 }
 
 class _BarrierPageState extends State<BarrierPage> {

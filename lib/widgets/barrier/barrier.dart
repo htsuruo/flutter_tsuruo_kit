@@ -61,7 +61,6 @@ class Barrier extends StatelessWidget {
 
 class _BoxIndicator extends StatelessWidget {
   const _BoxIndicator({
-    super.key,
     this.label,
     this.backgroundColor,
   });

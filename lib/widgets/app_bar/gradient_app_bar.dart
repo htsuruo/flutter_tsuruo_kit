@@ -21,7 +21,7 @@ class GradientAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
-    return Container(
+    return DecoratedBox(
       decoration: BoxDecoration(
         gradient: gradient,
       ),

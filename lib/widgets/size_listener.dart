@@ -4,7 +4,7 @@ import 'package:flutter/rendering.dart';
 // ref. https://github.com/mono0926/flutter_mono_kit/blob/main/lib/widgets/size_listener.dart
 // ref. https://qiita.com/najeira/items/0ff716971184042b1434
 
-typedef _SizeChangedCallback = void Function(Size size);
+typedef SizeChangedCallback = void Function(Size size);
 
 class SizeListener extends SingleChildRenderObjectWidget {
   const SizeListener({
@@ -12,7 +12,7 @@ class SizeListener extends SingleChildRenderObjectWidget {
     super.child,
     required this.onSizeChanged,
   });
-  final _SizeChangedCallback onSizeChanged;
+  final SizeChangedCallback onSizeChanged;
 
   @override
   RenderObject createRenderObject(BuildContext context) =>
@@ -24,7 +24,7 @@ class _SizeListenerRenderObject extends RenderProxyBox {
     RenderBox? child,
     required this.onSizeChanged,
   }) : super(child);
-  final _SizeChangedCallback onSizeChanged;
+  final SizeChangedCallback onSizeChanged;
 
   Size? _size;
 

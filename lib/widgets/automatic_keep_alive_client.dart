@@ -7,8 +7,9 @@ class AutomaticKeepAliveClient extends StatefulWidget {
     super.key,
     required this.child,
   });
+
   @override
-  _AutomaticKeepAliveClientState createState() =>
+  State<AutomaticKeepAliveClient> createState() =>
       _AutomaticKeepAliveClientState();
 
   final Widget child;
