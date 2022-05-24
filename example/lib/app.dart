@@ -10,7 +10,7 @@ Map<String, WidgetBuilder> _routes = {
 };
 
 class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+  const App({super.key});
   @override
   Widget build(BuildContext context) {
     const title = 'tsuruo_kit example';

@@ -7,7 +7,7 @@ Map<String, WidgetBuilder> _routes = {
 };
 
 class RoutesListViewPage extends StatelessWidget {
-  const RoutesListViewPage({Key? key}) : super(key: key);
+  const RoutesListViewPage({super.key});
   static const routeName = '/routes_listview';
 
   @override
@@ -37,7 +37,7 @@ class RoutesListViewPage extends StatelessWidget {
 }
 
 class _HogePage extends StatelessWidget {
-  const _HogePage({Key? key}) : super(key: key);
+  const _HogePage({super.key});
 
   static const routeName = '/hoge';
 
@@ -52,7 +52,7 @@ class _HogePage extends StatelessWidget {
 }
 
 class _PiyoPage extends StatelessWidget {
-  const _PiyoPage({Key? key}) : super(key: key);
+  const _PiyoPage({super.key});
 
   static const routeName = '/piyo';
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tsuruo_kit/tsuruo_kit.dart';
 
 class BarrierPage extends StatefulWidget {
-  const BarrierPage({Key? key}) : super(key: key);
+  const BarrierPage({super.key});
   static const routeName = '/barrier';
   @override
   _BarrierPageState createState() => _BarrierPageState();

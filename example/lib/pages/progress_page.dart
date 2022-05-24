@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tsuruo_kit/tsuruo_kit.dart';
 
 class ProgressPage extends ConsumerWidget {
-  const ProgressPage({Key? key}) : super(key: key);
+  const ProgressPage({super.key});
 
   static const routeName = '/progress';
 
