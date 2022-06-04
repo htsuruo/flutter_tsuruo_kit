@@ -17,7 +17,7 @@ class Barrier extends StatelessWidget {
   final Widget child;
   final bool show;
   final Duration switchDuration;
-  // TODO(tsuruoka): future work
+  // MEMO(tsuruoka): Future Work
   // final Duration timeout;
   final Color? backgroundColor;
   final bool useBoxIndicator;
