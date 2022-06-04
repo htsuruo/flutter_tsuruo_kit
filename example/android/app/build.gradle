@@ -47,7 +47,9 @@ android {
         applicationId "com.tsuruoka.example"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
-        minSdkVersion flutter.minSdkVersion
+        // ref. https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=ja#ApiLevels
+        // Android 7.0
+        minSdkVersion 24
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
