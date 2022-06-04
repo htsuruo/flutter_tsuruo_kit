@@ -1,3 +1,7 @@
+## 0.0.10
+
+- Upgrade to Flutter 3, Dart 2.17
+
 ## 0.0.9
 
 - Remove Enum extension because Dart 2.15 release
