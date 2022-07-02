@@ -27,6 +27,8 @@ class Barrier extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final useBoxIndicator = this.useBoxIndicator || label != null;
+    final boxWidget = this.boxWidget;
     return Stack(
       children: [
         child,
@@ -41,15 +43,19 @@ class Barrier extends StatelessWidget {
                       color: backgroundColor ?? Colors.black45,
                       dismissible: false,
                     ),
-                    boxWidget ??
-                        Center(
-                          child: useBoxIndicator || label != null
-                              ? _BoxIndicator(
-                                  label: label,
-                                  backgroundColor: boxBackgroundColor,
-                                )
-                              : const CircularProgressIndicator(),
-                        ),
+                    boxWidget == null
+                        ? _CenteredIndicator(
+                            useBoxIndicator: useBoxIndicator,
+                            label: label,
+                            boxBackgroundColor: boxBackgroundColor,
+                            child: const CircularProgressIndicator(),
+                          )
+                        : _CenteredIndicator(
+                            useBoxIndicator: useBoxIndicator,
+                            label: label,
+                            boxBackgroundColor: boxBackgroundColor,
+                            child: boxWidget,
+                          ),
                   ],
                 )
               : const SizedBox.shrink(),
@@ -59,14 +65,43 @@ class Barrier extends StatelessWidget {
   }
 }
 
-class _BoxIndicator extends StatelessWidget {
-  const _BoxIndicator({
+class _CenteredIndicator extends StatelessWidget {
+  const _CenteredIndicator({
+    required this.useBoxIndicator,
+    required this.boxBackgroundColor,
+    required this.label,
+    required this.child,
+  });
+
+  final bool useBoxIndicator;
+  final Color? boxBackgroundColor;
+  final String? label;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: useBoxIndicator
+          ? _DecoratedBox(
+              label: label,
+              backgroundColor: boxBackgroundColor,
+              child: child,
+            )
+          : child,
+    );
+  }
+}
+
+class _DecoratedBox extends StatelessWidget {
+  const _DecoratedBox({
+    required this.child,
     this.label,
     this.backgroundColor,
   });
 
   final String? label;
   final Color? backgroundColor;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +118,7 @@ class _BoxIndicator extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const CircularProgressIndicator(),
+            child,
             if (label != null)
               Padding(
                 padding: const EdgeInsets.only(top: 16),
