@@ -1,6 +1,7 @@
 import 'package:example/logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:tsuruo_kit/tsuruo_kit.dart';
 
 class ProgressPage extends ConsumerWidget {
@@ -10,17 +11,40 @@ class ProgressPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+    final useCustomIndicator = ref.watch(_useCustomIndicator);
     return ProgressHUD(
+      indicatorWidget: useCustomIndicator
+          ? LoadingAnimationWidget.fourRotatingDots(
+              color: colorScheme.primary,
+              size: 44,
+            )
+          : null,
       child: Scaffold(
         appBar: AppBar(
           title: Text(runtimeType.toString()),
         ),
         body: Center(
-          child: OutlinedButton(
-            onPressed: () async {
-              await ref.read(_progressController).show();
-            },
-            child: const Text('show'),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              OutlinedButton(
+                onPressed: () async {
+                  await ref.read(_progressController).show();
+                },
+                child: const Text('show'),
+              ),
+              CheckboxListTile(
+                value: useCustomIndicator,
+                onChanged: (_) {
+                  ref
+                      .read(_useCustomIndicator.notifier)
+                      .update((state) => !state);
+                },
+                title: const Text('Use custom progress indicator'),
+              ),
+            ],
           ),
         ),
       ),
@@ -28,6 +52,7 @@ class ProgressPage extends ConsumerWidget {
   }
 }
 
+final _useCustomIndicator = StateProvider((ref) => false);
 final _progressController = Provider((ref) => _ProgressController(ref.read));
 
 class _ProgressController {
@@ -37,7 +62,7 @@ class _ProgressController {
   Future<void> show() async {
     final success =
         await _read(progressController.notifier).executeWithProgress<bool>(
-      () => Future<bool>.delayed(const Duration(seconds: 3), () {
+      () => Future<bool>.delayed(const Duration(seconds: 2), () {
         return true;
       }),
     );

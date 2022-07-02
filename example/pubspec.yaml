@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_riverpod:
+  loading_animation_widget:
   simple_logger:
   tsuruo_kit:
     path: ..
