@@ -10,11 +10,13 @@ class ProgressHUD extends ConsumerWidget {
     required this.child,
     this.useBoxIndicator = true,
     this.label,
+    this.indicatorWidget,
   });
 
   final Widget child;
   final bool useBoxIndicator;
   final String? label;
+  final Widget? indicatorWidget;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,6 +27,7 @@ class ProgressHUD extends ConsumerWidget {
       show: show,
       label: label,
       useBoxIndicator: useBoxIndicator,
+      boxWidget: indicatorWidget,
       child: child,
     );
   }
