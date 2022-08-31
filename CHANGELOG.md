@@ -1,3 +1,8 @@
+## 0.0.11
+
+- Upgrade to Flutter 3.3, Dart 2.18
+- Remove `Document` class
+
 ## 0.0.10
 
 - Upgrade to Flutter 3, Dart 2.17
