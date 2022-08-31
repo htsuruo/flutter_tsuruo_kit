@@ -1,4 +1,4 @@
 # tsuruo_kit
 
-A collection of convenient widgets and extensions, utils more... created by tsuruo.
+A toolkit of convenient widgets and extensions etc created by tsuruo.
 
