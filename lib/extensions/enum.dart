@@ -11,4 +11,7 @@ extension EnumByNameX<T extends Enum> on Iterable<T> {
       return null;
     }
   }
+
+  T byNameOrDefault(String? name, {required T defaultValue}) =>
+      byNameOrNull(name) ?? defaultValue;
 }
