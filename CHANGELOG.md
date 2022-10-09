@@ -1,3 +1,8 @@
+
+## 0.0.12
+
+- Upgrade dependencies
+
 ## 0.0.11
 
 - Upgrade to Flutter 3.3, Dart 2.18
