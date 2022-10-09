@@ -53,19 +53,19 @@ class ProgressPage extends ConsumerWidget {
 }
 
 final _useCustomIndicator = StateProvider((ref) => false);
-final _progressController = Provider((ref) => _ProgressController(ref.read));
+final _progressController = Provider(_ProgressController.new);
 
 class _ProgressController {
-  _ProgressController(this._read);
-  final Reader _read;
+  _ProgressController(this._ref);
+  final Ref _ref;
 
   Future<void> show() async {
     final success =
-        await _read(progressController.notifier).executeWithProgress<bool>(
-      () => Future<bool>.delayed(const Duration(seconds: 2), () {
-        return true;
-      }),
-    );
+        await _ref.read(progressController.notifier).executeWithProgress<bool>(
+              () => Future<bool>.delayed(const Duration(seconds: 2), () {
+                return true;
+              }),
+            );
     logger.fine('success: $success');
     // 結果を元に連続して呼び出すことも可能
     // if (success) {
