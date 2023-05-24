@@ -23,7 +23,8 @@ class App extends StatelessWidget {
         body: RoutesListView(routes: _routes),
       ),
       theme: ThemeData.from(
-        colorScheme: const ColorScheme.light(),
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
       ).copyWith(
         dividerTheme: const DividerThemeData(space: 0),
       ),

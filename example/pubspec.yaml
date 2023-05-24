@@ -19,3 +19,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   pedantic_mono:
+
+flutter:
+  uses-material-design: true
