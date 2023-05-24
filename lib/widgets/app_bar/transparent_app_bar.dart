@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 /// AppBar自体は表示したくないがiOSのステータスバーの色を制御したい時用
-class TransparentAppBar extends StatelessWidget with PreferredSizeWidget {
+class TransparentAppBar extends StatelessWidget implements PreferredSizeWidget {
   const TransparentAppBar({
     super.key,
     this.overlayStyle = SystemUiOverlayStyle.dark,
