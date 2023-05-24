@@ -1,4 +1,8 @@
 
+# 0.1.0
+
+- Require Dart 3
+
 ## 0.0.14
 
 - Dart 3 & Flutter 3.10 compatibility
