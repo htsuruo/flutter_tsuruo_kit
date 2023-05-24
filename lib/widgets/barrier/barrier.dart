@@ -124,7 +124,7 @@ class _DecoratedBox extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 16),
                 child: Text(
                   label!,
-                  style: theme.textTheme.bodyText2,
+                  style: theme.textTheme.bodyMedium,
                 ),
               )
           ],
