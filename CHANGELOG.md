@@ -1,4 +1,9 @@
 
+## 0.2.0
+
+- **Breaking**: `DocumentReference` extension is removed
+- Remove `cloud_firestore` dependency
+
 ## 0.1.1
 
 - Update README
