@@ -7,9 +7,10 @@ environment:
   sdk: ^3.0.0
 
 dependencies:
-  cloud_firestore: ^4.7.1
+  cloud_firestore: ^4.8.1
   # due to `flutter_test` depends on collection 1.17.1
   collection: ^1.17.1
+  firebase_core: ^2.14.0
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.3.6
