@@ -126,7 +126,7 @@ class _DecoratedBox extends StatelessWidget {
                   label!,
                   style: theme.textTheme.bodyMedium,
                 ),
-              )
+              ),
           ],
         ),
       ),
