@@ -1,4 +1,9 @@
 
+## 0.2.1
+
+- Remove `configureWeb` and `flutter_web_plugin` dependency
+- Update dependencies
+
 ## 0.2.0
 
 - **Breaking**: `DocumentReference` extension is removed
