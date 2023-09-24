@@ -7,11 +7,11 @@ environment:
   sdk: ^3.0.0
 
 dependencies:
-  # due to `flutter_test` depends on collection 1.17.1
-  collection: ^1.17.1
+  # due to `flutter_test` depends on collection 1.17.2
+  collection: ^1.17.2
   flutter:
     sdk: flutter
-  flutter_riverpod: ^2.3.6
+  flutter_riverpod: ^2.4.0
   flutter_web_plugins:
     sdk: flutter
   rxdart: ^0.27.7
@@ -19,4 +19,4 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  pedantic_mono: ^1.22.0
+  pedantic_mono: ^1.24.0
