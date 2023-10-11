@@ -1,6 +1,6 @@
 name: tsuruo_kit
 description: A toolkit created by `@htsuruo` that includes useful widgets, extensions, providers, and more.
-version: 0.2.1
+version: 0.2.2
 repository: https://github.com/htsuruo/flutter_tsuruo_kit
 
 environment:

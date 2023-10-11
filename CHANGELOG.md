@@ -1,4 +1,8 @@
 
+## 0.2.2
+
+- Add applyUnlessNull as Object? extension
+
 ## 0.2.1
 
 - Remove `configureWeb` and `flutter_web_plugin` dependency
