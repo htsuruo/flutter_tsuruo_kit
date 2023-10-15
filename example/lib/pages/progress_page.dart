@@ -2,7 +2,7 @@ import 'package:example/logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:tsuruo_kit/tsuruo_kit.dart';
+import 'package:tsuruo_kit/widgets/widgets.dart';
 
 class ProgressPage extends ConsumerWidget {
   const ProgressPage({super.key});

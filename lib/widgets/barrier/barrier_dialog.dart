@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tsuruo_kit/tsuruo_kit.dart';
+
+import 'barrier.dart';
 
 class BarrierDialog extends StatelessWidget {
   const BarrierDialog({

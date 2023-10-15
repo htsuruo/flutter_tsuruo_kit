@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+export 'barrier_dialog.dart';
+export 'progress_controller.dart';
+export 'progress_hud.dart';
+
 class Barrier extends StatelessWidget {
   const Barrier({
     super.key,
