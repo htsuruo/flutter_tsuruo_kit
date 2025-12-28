@@ -29,7 +29,7 @@ class _BarrierPageState extends State<BarrierPage> {
         ),
       ],
       show: barrierDialogShow,
-      child: Barrier(
+      child: ProgressBarrier(
         show: barrierShow,
         useBoxIndicator: true,
         child: Scaffold(

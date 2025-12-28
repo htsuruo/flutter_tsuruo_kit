@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tsuruo_kit/widgets/barrier/progress_provider.dart';
 
-import 'barrier.dart';
+import 'progress_barrier.dart';
 
-// ProgressController依存の根本に置く用のWidget
-// `executeWithProgress`に連動してBarrierが呼ばれる
-class ProgressHUD extends ConsumerWidget {
-  const ProgressHUD({
+class ProgressRootOverlay extends ConsumerWidget {
+  const ProgressRootOverlay({
     super.key,
     required this.child,
     this.useBoxIndicator = true,
@@ -21,11 +20,9 @@ class ProgressHUD extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final show = ref.watch(
-      progressController.select((s) => s.show),
-    );
-    return Barrier(
-      show: show,
+    final isProgress = ref.watch(progressProvider);
+    return ProgressBarrier(
+      show: isProgress,
       label: label,
       useBoxIndicator: useBoxIndicator,
       boxWidget: indicatorWidget,

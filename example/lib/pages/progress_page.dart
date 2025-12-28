@@ -15,7 +15,7 @@ class ProgressPage extends ConsumerWidget {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
     final useCustomIndicator = ref.watch(_useCustomIndicator);
-    return ProgressHUD(
+    return ProgressRootOverlay(
       indicatorWidget: useCustomIndicator
           ? LoadingAnimationWidget.fourRotatingDots(
               color: colorScheme.primary,
@@ -63,7 +63,7 @@ class _ProgressController {
 
   Future<void> show() async {
     final success =
-        await _ref.read(progressController.notifier).executeWithProgress<bool>(
+        await _ref.read(progressProvider.notifier).runWithProgress<bool>(
               () => Future<bool>.delayed(const Duration(seconds: 2), () {
                 return true;
               }),

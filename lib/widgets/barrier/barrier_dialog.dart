@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'barrier.dart';
+import 'progress_barrier.dart';
 
 class BarrierDialog extends StatelessWidget {
   const BarrierDialog({
@@ -22,7 +22,7 @@ class BarrierDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Barrier(
+    return ProgressBarrier(
       show: show,
       backgroundColor: backgroundColor,
       boxWidget: SafeArea(
