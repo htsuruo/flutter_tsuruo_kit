@@ -1,6 +1,7 @@
 import 'package:example/logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:tsuruo_kit/widgets/widgets.dart';
 
@@ -52,8 +53,9 @@ class ProgressPage extends ConsumerWidget {
   }
 }
 
-final _useCustomIndicator = StateProvider((ref) => false);
-final _progressController = Provider(_ProgressController.new);
+final StateProvider<bool> _useCustomIndicator = StateProvider((ref) => false);
+final Provider<_ProgressController> _progressController =
+    Provider(_ProgressController.new);
 
 class _ProgressController {
   _ProgressController(this._ref);
