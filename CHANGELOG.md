@@ -1,4 +1,11 @@
 
+## 0.3.0
+
+- **BREAKING**: Renamed `ProgressHUD` to `ProgressRootOverlay`.
+- **BREAKING**: Refactored the progress indicator API. Use `ref.read(progressProvider.notifier).runWithProgress()` to show an indicator during an async operation.
+- Improved naming of components related to the progress indicator feature.
+- Support for Riverpod v3.
+
 ## 0.2.2
 
 - Add applyUnlessNull as Object? extension
