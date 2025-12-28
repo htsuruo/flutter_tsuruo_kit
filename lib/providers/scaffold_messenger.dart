@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-final scaffoldMessengerKey = Provider(
-  (_) => GlobalKey<ScaffoldMessengerState>(),
-);
+part 'scaffold_messenger.g.dart';
+
+@riverpod
+GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey(Ref ref) =>
+    GlobalKey<ScaffoldMessengerState>();
 
 extension ScaffoldMessengerStateEx on ScaffoldMessengerState {
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showMessage(

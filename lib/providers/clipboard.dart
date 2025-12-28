@@ -1,8 +1,11 @@
 import 'package:flutter/services.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:tsuruo_kit/providers/scaffold_messenger.dart';
 
-final clipboardProvider = Provider(ClipboardService.new);
+part 'clipboard.g.dart';
+
+@riverpod
+ClipboardService clipboardService(Ref ref) => ClipboardService(ref);
 
 class ClipboardService {
   ClipboardService(this._ref);
@@ -13,7 +16,10 @@ class ClipboardService {
     String? message,
   }) {
     Clipboard.setData(ClipboardData(text: text));
-    _ref.read(scaffoldMessengerKey).currentState!.showMessage(
+    _ref
+        .read(scaffoldMessengerKeyProvider)
+        .currentState!
+        .showMessage(
           message ?? 'copied successfully',
         );
   }

@@ -54,7 +54,7 @@ class _BarrierPageState extends State<BarrierPage> {
                   child: const Text('show barrier'),
                 ),
                 OutlinedButton(
-                  onPressed: () async {
+                  onPressed: () {
                     setState(() {
                       barrierDialogShow = true;
                     });

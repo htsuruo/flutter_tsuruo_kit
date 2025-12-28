@@ -41,7 +41,7 @@ final class ProgressNotifierProvider
   }
 }
 
-String _$progressNotifierHash() => r'594c104d9676d837fc98f88907e210076bc54acf';
+String _$progressNotifierHash() => r'269813d929a6fc6f083d0128727cad2d4ead8114';
 
 abstract class _$ProgressNotifier extends $Notifier<bool> {
   bool build();
